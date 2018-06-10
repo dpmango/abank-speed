@@ -13,10 +13,11 @@ block content
             +icon('ico-logo')
         .hero__right
           .hero__content
-            
-            h1.hero__heading.wow(data-animation-delay=".2s" data-animation-class="wowFadeDown") Альфа-Бизнес Мобайл. <br />Скорость имеет значение
-            .hero__description.wow(data-animation-delay=".35s" data-animation-class="wowFadeDown") Мобильное приложение <br />для ведения бизнеса в&nbsp;любом месте, <br />в&nbsp;любое время
-            .hero__cta.wow(data-animation-delay=".5s" data-animation-class="wowFadeDown")
+            .hero__app.wow(data-animation-delay=".2s" data-animation-class="wowFadeDown")
+              i.icon.icon-app-icon
+            h1.hero__heading.wow(data-animation-delay=".35s" data-animation-class="wowFadeDown") Альфа-Бизнес Мобайл. <br />Скорость имеет значение
+            .hero__description.wow(data-animation-delay=".5s" data-animation-class="wowFadeDown") Мобильное приложение <br />для ведения бизнеса в&nbsp;любом месте, <br />в&nbsp;любое время
+            .hero__cta.wow(data-animation-delay=".65s" data-animation-class="wowFadeDown")
 
               .step-nav__download
                 a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
@@ -24,10 +25,10 @@ block content
                 a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
                   i.icon.icon-google-play-logo
         
-        .hero__scroll(js-scrollTo data-scroll-to="second-block")
-          .hero__scroll-wrap
-            +icon('ico-scroll-arrow')
-  
+        //- .hero__scroll.wow(data-animation-delay="1.5s" js-scrollTo data-scroll-to="second-block")
+        //-   .hero__scroll-wrap
+        //-     +icon('ico-scroll-arrow')
+
   // INFO
   .info(data-target="second-block")
 
@@ -53,9 +54,61 @@ block content
 
 
     // NEW
-    .container.container--narrow
-      h2.heading.heading_size_l И&nbsp;это ещё не&nbsp;всё, другие преимущества <br />Альфа-Бизнес Мобайл
-          
+    .container
+      .container-offset
+        h2.heading.heading_size_l И&nbsp;это ещё не&nbsp;всё, другие преимущества <br />Альфа-Бизнес Мобайл
+        .benefits-list
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-time')
+            .heading.heading_size_m Быстрые платежи
+            p Быстрые платежи и&nbsp;переводы. <br />
+              | Платите своим партнерам <br />
+              | с&nbsp;01:00 до&nbsp;20:30, а&nbsp;клиентам <br />
+              | Альфа-Банка&nbsp;&mdash; в&nbsp;любое время.
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-card-list')
+            .heading.heading_size_m Связь с банком
+            p Чат со&nbsp;специалистами банка <br />
+              | прямо в&nbsp;приложении, доступен <br />
+              | 7&nbsp;дней в&nbsp;неделю, 24&nbsp;часа в&nbsp;сутки. <br />
+              | Решение любого вопроса <br />
+              | в&nbsp;течение нескольких минут.
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-chat')
+            .heading.heading_size_m Контроль карт
+            p История платежей по карте, информация 
+              | по условиям обслуживания, 
+              | возможность временно заблокировать 
+              | и разблокировать карту, а также 
+              | сменить пин-код.
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-account')
+            .heading.heading_size_m Полная информация <br />по&nbsp;счетам
+            p Актуальные остатки по&nbsp;счёту, <br />
+              | история операций, контроль <br />
+              | оборотных средств&nbsp;&mdash; <br />
+              | всегда под рукой.
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-ready-send')
+            .heading.heading_size_m Выгрузка выписки <br />и&nbsp;платёжек
+            p Отправляйте выписку бухгалтеру <br />
+              | прямо из&nbsp;приложения. <br />
+              | Отправляйте исполненные <br />
+              | платёжки по&nbsp;почте.
+          .benefits-list__col
+            .benefits-list__icon
+              +icon('ico-filter')
+            .heading.heading_size_m Управление счетами<br />компаний
+            p Открытие дополнительного расчётного <br />
+              | счёта и&nbsp;счёта &laquo;Налоговая копилка&raquo;. <br />
+              | Перевод между своими счетами&nbsp;&mdash; <br />
+              | юридического и&nbsp;физического лица.
+      
   // STEPS
   .steps(data-target="issue-card")
     .container.container--narrow

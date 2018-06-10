@@ -1,38 +1,47 @@
 $sprite: (
-	appstore-logo: (
+	app-icon: (
 		offset-x: 0px,
 		offset-y: 0px,
-		width: 143px,
+		width: 97px,
+		height: 97px,
+		total-width: 242px,
+		total-height: 147px,
+		image: '../img/sprite.png'
+	),
+	appstore-logo: (
+		offset-x: -107px,
+		offset-y: -50px,
+		width: 120px,
 		height: 40px,
-		total-width: 143px,
-		total-height: 140px,
+		total-width: 242px,
+		total-height: 147px,
 		image: '../img/sprite.png'
 	),
 	google-play-logo: (
-		offset-x: 0px,
-		offset-y: -50px,
-		width: 143px,
+		offset-x: -107px,
+		offset-y: 0px,
+		width: 135px,
 		height: 40px,
-		total-width: 143px,
-		total-height: 140px,
+		total-width: 242px,
+		total-height: 147px,
 		image: '../img/sprite.png'
 	),
 	social-facebook: (
 		offset-x: 0px,
-		offset-y: -100px,
+		offset-y: -107px,
 		width: 40px,
 		height: 40px,
-		total-width: 143px,
-		total-height: 140px,
+		total-width: 242px,
+		total-height: 147px,
 		image: '../img/sprite.png'
 	),
 	social-vk: (
 		offset-x: -50px,
-		offset-y: -100px,
+		offset-y: -107px,
 		width: 40px,
 		height: 40px,
-		total-width: 143px,
-		total-height: 140px,
+		total-width: 242px,
+		total-height: 147px,
 		image: '../img/sprite.png'
 	),
 );
@@ -91,6 +100,9 @@ $sprite: (
 
 
 
+	.icon-app-icon {
+		@include sprite(app-icon)
+	}
 	.icon-appstore-logo {
 		@include sprite(appstore-logo)
 	}

@@ -11,6 +11,7 @@ $(document).ready(function(){
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady(){
+    heroReady();
     handleUTM();
     legacySupport();
     initScrollMonitor();
@@ -158,6 +159,12 @@ $(document).ready(function(){
     $('body').addClass('css3-filter-disabled');
   }
 
+
+  function heroReady(){
+    setTimeout(function(){
+      $('.hero').addClass('is-ready');
+    }, 800)
+  }
   // Prevent # behavior
 	_document
     .on('click', '[href="#"]', function(e) {
