@@ -1,0 +1,17 @@
+include _mixins
+doctype html
+html(lang="ru")
+  head
+    include _head
+
+  body
+    // Google Tag Manager (noscript)
+    noscript
+      iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-MS8K9L', height='0', width='0', style='display:none;visibility:hidden')
+    // End Google Tag Manager (noscript)
+    .page
+      .page__content
+        block content
+
+    block scripts
+      include _scripts

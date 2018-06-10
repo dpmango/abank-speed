@@ -1,0 +1,131 @@
+// INDEX
+
+
+.heading
+  font-weight: 700
+  line-height: 1.2
+  &_size_l
+    margin-top: 30px
+    margin-bottom: 25px
+    font-size: 30px
+  &_size_m
+    margin-top: 20px
+    margin-bottom: 20px
+    font-size: 22px
+
++r($desktop)
+  .heading
+    &_size_l
+      font-size: 24px
+    &_size_m
+      font-size: 20px
+
++r($tablet)
+  .heading
+    &_size_l
+      margin-top: 15px
+      margin-bottom: 10px
+      font-size: 17px
+    &_size_m
+      margin-top: 10px
+      margin-bottom: 10px
+      font-size: 15px
+
+.icon
+  &-circle
+    size: 42px
+    border-radius: 50%
+    border: 1px solid $fontTetriary
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    +r($tablet)
+      size: 30px
+
+
+.plato
+  margin-top: 45px
+  margin-bottom: 70px
+  margin-left: -15px
+  margin-right: -15px
+  padding: 0 15px
+  position: relative
+  &__wrap
+    position: relative
+    z-index: 2
+    background: white
+    border-radius: 14px
+    padding: 50px
+    display: flex
+    align-items: center
+    // opacity: .1
+    &--gray
+      display: block
+      margin: 0
+      background: #f3f4f5
+  &::after
+    display: inline-block
+    content: ''
+    position: absolute
+    z-index: 1
+    top: -20px
+    left: -50px
+    right: -50px
+    bottom: -70px
+    background: url('../img/infoHolder-bg.png') no-repeat center top
+    background-size: 100% 100%
+
+
+.css3-filter-enabled .plato
+  &::after
+    top: 30px
+    left: 10px
+    right: 10px
+    bottom: -15px
+    background: $borderColor
+    filter: blur(20px)
+    border-radius: 15px
+
+.css3-filter-disabled .plato
+  &::after
+    +r($tablet)
+      background: none
+      box-shadow: 0px 10px 20px -5px rgba($borderColor, .9)
+
+.br-mobile
+  display: none
+
+.text-desktop
+  font-style: normal
+.text-mobile
+  font-style: normal
+  display: none
+
++r($desktop)
+  .plato
+    &__wrap
+      padding: 50px 25px
+  br
+    display: none
+  .br-mobile
+    display: block
+
++r($tablet)
+  .plato
+    margin-top: 15px
+    margin-bottom: 40px
+    padding: 0
+    &__wrap
+      flex-direction: column-reverse
+      align-items: flex-start
+      padding: 35px 15px
+
+
+  .benefits__list-name, .scope__list-name
+    line-height: 1.33
+
+  .text-desktop
+    display: none
+  .text-mobile
+    display: inline-block

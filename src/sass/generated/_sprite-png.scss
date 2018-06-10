@@ -1,0 +1,141 @@
+$sprite: (
+	apple-pay: (
+		offset-x: -108px,
+		offset-y: -100px,
+		width: 94px,
+		height: 39px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	appstore-logo: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 143px,
+		height: 40px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	google-pay: (
+		offset-x: 0px,
+		offset-y: -100px,
+		width: 98px,
+		height: 39px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	google-play-logo: (
+		offset-x: 0px,
+		offset-y: -50px,
+		width: 143px,
+		height: 40px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	samsung-pay: (
+		offset-x: -153px,
+		offset-y: 0px,
+		width: 66px,
+		height: 66px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	social-facebook: (
+		offset-x: 0px,
+		offset-y: -149px,
+		width: 40px,
+		height: 40px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+	social-vk: (
+		offset-x: -50px,
+		offset-y: -149px,
+		width: 40px,
+		height: 40px,
+		total-width: 219px,
+		total-height: 189px,
+		image: '../img/sprite.png'
+	),
+);
+
+
+@mixin sprite-size($image) {
+	background-size: map-get(map-get($sprite, $image), 'total-width') map-get(map-get($sprite, $image), 'total-height');
+}
+
+@mixin sprite-width($image) {
+	width: map-get(map-get($sprite, $image), 'width');
+}
+
+@mixin sprite-height($image) {
+	height: map-get(map-get($sprite, $image), 'height');
+}
+
+@mixin sprite-position($image) {
+	background-position: map-get(map-get($sprite, $image), 'offset-x') map-get(map-get($sprite, $image), 'offset-y');
+}
+
+@mixin sprite-image($image) {
+	background-image: url(map-get(map-get($sprite, $image), 'image'));
+}
+
+@mixin sprite-image-retina($image) {
+	$image-path: map-get(map-get($sprite, $image), 'image');
+	$image-path-retina: str-slice($image-path, 1, str-index($image-path, '.png') - 1) + '@2x.png';
+
+	background-image: url($image-path-retina);
+}
+
+@mixin sprite($image, $size: true) {
+	@include sprite-image($image);
+	@include sprite-position($image);
+	background-repeat: no-repeat;
+
+	@if $size {
+		@include sprite-width($image);
+		@include sprite-height($image);
+	}
+
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: 2),
+		only screen and (   min--moz-device-pixel-ratio: 2),
+		only screen and (     -o-min-device-pixel-ratio: 2/1),
+		only screen and (        min-device-pixel-ratio: 2),
+		only screen and (                min-resolution: 192dpi),
+		only screen and (                min-resolution: 2dppx) {
+
+		@include sprite-size($image);
+		@include sprite-image-retina($image);
+
+	}
+}
+
+
+
+	.icon-apple-pay {
+		@include sprite(apple-pay)
+	}
+	.icon-appstore-logo {
+		@include sprite(appstore-logo)
+	}
+	.icon-google-pay {
+		@include sprite(google-pay)
+	}
+	.icon-google-play-logo {
+		@include sprite(google-play-logo)
+	}
+	.icon-samsung-pay {
+		@include sprite(samsung-pay)
+	}
+	.icon-social-facebook {
+		@include sprite(social-facebook)
+	}
+	.icon-social-vk {
+		@include sprite(social-vk)
+	}

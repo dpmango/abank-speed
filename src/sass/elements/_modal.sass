@@ -1,0 +1,106 @@
+// Styles for dialog window
+.mfp-wrap
+  -webkit-overflow-scrolling: touch
+  -webkit-transform: translateZ(0)
+
+.mfp-container
+  padding-left: 0
+  padding-right: 0
+
+.modal
+  background: white
+  padding: 30px 30px
+  text-align: left
+  max-width: 600px
+  margin: 40px auto
+  border-radius: 4px
+  box-shadow: 0 2px 15px rgba(black, .1)
+  position: relative
+  &__close
+    position: absolute
+    top: 0px
+    right: 0px
+    -webkit-apperance: none
+    background: transparent
+    box-shadow: none
+    border: 0
+    font-size: 0
+    padding: 12px
+    cursor: pointer
+    transition: .25s $ease
+    .ico
+      font-size: 25px
+    &:hover
+      opacity: .7
+  &__heading
+    font-size: 16px
+    font-weight: 700
+  &__table
+    margin: 20px -15px
+    border-collapse: collapse
+    width: 100%
+    thead
+      font-size: 13px
+      td
+        border-width: 2px
+    tbody
+      font-size: 16px
+      font-weight: 700
+      tr
+        &:last-child
+          td
+            border-width: 2px
+    td
+      padding: 15px
+      border-bottom: 1px solid $borderColor
+
+  &__note
+    max-width: 480px
+    font-size: 13px
+
+
++r($tablet)
+  .modal
+    padding: 20px 20px
+    border-radius: 0
+    &__heading
+      font-size: 13px
+      br
+        display: none
+
+    &__table
+      margin: 10px -10px 15px
+      width: calc(100% + 20px)
+      thead
+        font-size: 10px
+      tbody
+        font-size: 13px
+      td
+        padding: 8px 10px
+
+    &__note
+      font-size: 10px
+      margin-right: -10px
+      margin-left: -10px
+
+// Fade-zoom animation for first dialog
+
+.popup-buble
+  .modal
+    opacity: 0
+    transition: all 0.2s ease-in-out
+    transform: scale(0.8)
+  &.mfp-ready .modal
+    opacity: 1
+    transform: scale(1)
+  &.mfp-removing .modal
+    transform: scale(0.8)
+    opacity: 0
+  &.mfp-bg
+    background: #f3f4f5
+    opacity: 0
+    transition: opacity 0.3s $ease
+  &.mfp-ready.mfp-bg
+    opacity: 1
+  &.mfp-removing.mfp-bg
+    opacity: 0
