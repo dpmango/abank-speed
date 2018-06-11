@@ -2,55 +2,109 @@
 .info
   background: #EDEEEF
   padding: 60px 0 90px
-  &__list
-    flex: 0 1 55%
-    max-width: 55%
-    &-content
-      .heading
-        margin-top: 10px
-        margin-bottom: 10px
-      p
-        color: $fontSecondary
-        margin: 0
-        & + p
-          margin-top: 1em
+
+.info-card
+  display: flex
+  align-items: center
+  width: 100%
+  // margin-left: -15px
+  // margin-right: -15px
+  &--reverse
+    flex-direction: row-reverse
+    .info-card__image
+      padding-right: 0
+      padding-left: 40px
+      &::after
+        right: auto
+        left: 40px
+  &__col
+    flex: 0 1 50%
+    max-width: 50%
+    // padding: 15px
+    outline: 1px solid rgba(tomato, .3)
 
   &__image
-    padding: 0 15px
-    flex: 0 1 45%
-    max-width: 45%
-    margin-bottom: -7%
+    position: relative
+    z-index: 1
+    padding-right: 40px
+    pointer-events: none
+    user-select: none
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      right: 40px
+      bottom: 0
+      top: 0
+      width: 1px
+      background: rgba(tomato, .3)
+    /* to fit into col
+    &--1
+      margin-top: -10%
+      margin-bottom: -28%
+      img
+        margin-left: -19%
+        width: 137%
+    &--2
+      margin-top: -13.5%
+      margin-bottom: -14%
+      img
+        margin-left: -5%
+        width: 116%
+    &--3
+      margin-top: -15%
+      margin-bottom: -28%
+      img
+        margin-left: -18.5%
+        width: 137%
+    &--4
+      margin-top: -7%
+      margin-bottom: -14%
+      img
+        margin-left: -5%
+        width: 116%
     img
-      width: 100%
+      // max-width: 100%
+      // image-rendering: optimizeQuality
+      // image-rendering: -webkit-optimize-contrast
+
+  &__content
+    .heading
+      margin-top: 10px
+      margin-bottom: 10px
+    p
+      color: $fontSecondary
+      margin: 0
+      & + p
+        margin-top: 1em
+
 
 +r($desktop)
   .info
     padding: 40px 0 70px 0
-    &__list
-      &-content
+    &-card
+      &__content
         p
           font-size: 15px
-    &__image
+
 
 
 +r($tablet)
   .info
     padding: 15px 0 40px 0
-    &__list
-      flex: 0 0 auto
-      width: 100%
-      max-width: 100%
-      &-content
+    &-card
+      &__content
         .heading
           margin-top: 7px
           margin-bottom: 7px
         p
           font-size: 13px
-    &__image
-      flex: 0 0 auto
-      width: 100%
-      max-width: 400px
-      margin-left: auto
-      margin-right: auto
-      margin-bottom: 0
-      margin-top: -45px
+
+      &__image
+        flex: 0 0 auto
+        width: 100%
+        max-width: 400px
+        margin-left: auto
+        margin-right: auto
+        margin-bottom: 0
+        margin-top: -45px

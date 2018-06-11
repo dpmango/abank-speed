@@ -31,29 +31,74 @@ block content
 
   // INFO
   .info(data-target="second-block")
-
     .container
+      
+      // info card
+      .info-card
+        .info-card__col
+          .info-card__image.info-card__image--1
+            img(src='img/illustration-1-check.png' srcset='img/illustration-1-check@2x.png 2x')
+
+        .info-card__col
+          .info-card__content
+            .heading.heading_size_m Оплата счёта по&nbsp;файлу <br />или фото
+            p Технология распознавания счёта <br />
+              | ускоряет процесс оплаты. Просто <br />
+              | сделайте фото счёта или загрузите <br />
+              | файл в&nbsp;форматах: jpg, pdf, xls <br />
+              | или xlsx.
+
       .plato
         .plato__wrap
-          .info__list
-            .info__list-content
-              .heading.heading_size_m Выпуск карты за 60 секунд
-              p Без заполнения документов, <span class="br-mobile"></span>звонков в колл-центр и выезда <span class="br-mobile"></span>курьера.
+          // info card
+          .info-card.info-card--reverse
+            .info-card__col
+              .info-card__image.info-card__image--2
+                img(src='img/illustration-2-statistics.png' srcset='img/illustration-2-statistics@2x.png 2x')
 
-            .info__list-content
-              .heading.heading_size_m Покупки в одно касание
-              p Оплачивайте покупки <span class="br-mobile"></span>в интернете <br>и торговых точках.
+            .info-card__col
+              .info-card__content
+                .heading.heading_size_m Финансовая аналитика&nbsp;&mdash; <br />наглядно, просто, всегда <br />под рукой!
+                p Всегда будьте в&nbsp;курсе финансов <br />
+                  | вашей компании&nbsp;&mdash; финансовая <br />
+                  | аналитика по&nbsp;доходам и&nbsp;расходам <br />
+                  | бизнеса в&nbsp;удобном формате.
 
-            .info__list-content
-              .heading.heading_size_m Бесплатный выпуск <span class="br-mobile"></span>и обслуживание
-              p Открытие и обслуживание <span class="br-mobile"></span>неограниченного количества <span class="br-mobile"></span>карт — 0₽.
-          
-          // card
-          .info__image.wow(data-animation-delay=".25s" data-fully-entered="true")
-            //- img(src='img/card-fly.png' srcset='img/card-fly@2x.png 2x')
+      // info card
+      .info-card
+        .info-card__col
+          .info-card__image.info-card__image--3
+            img(src='img/illustration-3-send.png' srcset='img/illustration-3-send@2x.png 2x')
 
+        .info-card__col
+          .info-card__content
+            .heading.heading_size_m Моментальное выставление <br />счёта вашим клиентам
+            p Выставляйте счета клиентам без сложных <br />
+              | бухгалтерских программ. Отправляйте <br />
+              | счета по&nbsp;почте или в&nbsp;мессенджеры <br />
+              | прямо из&nbsp;приложения &laquo;Альфа-Бизнес <br />
+              | Мобайл&raquo;
 
-    // NEW
+      .plato
+        .plato__wrap
+          // info card
+          .info-card.info-card--reverse
+            .info-card__col
+              .info-card__image.info-card__image--4
+                img(src='img/illustration-4-card.png' srcset='img/illustration-4-card@2x.png 2x')
+
+            .info-card__col
+              .info-card__content
+                .heading.heading_size_m Выпустить виртуальную <br />карту за&nbsp;60&nbsp;секунд
+                p Моментально откройте виртуальную <br />
+                  | карту в&nbsp;мобильном банке. <br />
+                  | Тут&nbsp;же совершайте покупки <br />
+                  | в&nbsp;интернете или привяжите карту <br />
+                  | к&nbsp;Apple Pay, Samsung Pay <br />
+                  | или Google Pay для оплаты <br />
+                  | в&nbsp;торговых точках.
+
+    // BENEFITS
     .container
       .container-offset
         h2.heading.heading_size_l И&nbsp;это ещё не&nbsp;всё, другие преимущества <br />Альфа-Бизнес Мобайл
