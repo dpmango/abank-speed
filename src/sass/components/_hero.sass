@@ -114,17 +114,25 @@
 +r($tablet)
   .hero
     &::after
-      background-position: 50% center
+      background-position: 50% bottom
+      background-image: url('../img/hero-mobile.jpg')
+      +retina
+        background-image: url('../img/hero-mobile@2x.jpg')
     &__wrapper
       flex-direction: column
       margin: 0
       padding-top: 80px
       padding-bottom: 40px
+      min-height: 600px
+      height: 100vh
     &__left, &__right
-      flex: 1 0 auto
+      flex: 0 0 auto
       padding: 0
       max-width: 100%
-
+    &__logo
+      margin-left: 0
+    &__app
+      display: none
     &__heading
       font-size: 21px
       margin-top: 15px
@@ -139,7 +147,7 @@
       .ico
         font-size: 40px
     &__cta
-      margin-top: 25px
+      margin-top: 15px
       margin-bottom: 0
     &__scroll
       display: none

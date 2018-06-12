@@ -44,3 +44,40 @@
         margin-top: 1em
   &__icon
     min-height: 50px
+
++r($tablet)
+  .benefits-list
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+      margin-top: 10px
+      &:nth-child(3n)
+        p
+          margin-right: 0%
+      p
+        font-size: 13px
+      .ico
+        overflow: visible
+        &-account
+          font-size: 35px
+        &-time
+          font-size: 34px
+        &-ready-send
+          font-size: 36px
+        &-filter
+          font-size: 35px
+        &-card-list
+          font-size: 34px
+        &-chat
+          font-size: 36px
+    &__icon
+      min-height: 40px
+
++r($mobile)
+  .benefits-list
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      margin-top: 0
+      p
+        font-size: 11px
