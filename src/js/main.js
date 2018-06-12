@@ -333,6 +333,18 @@ $(document).ready(function(){
       }
     });
 
+    $('.wow2').each(function(i, el){
+      var $el = $(el);
+      var elWatcher = scrollMonitor.create( $el );
+
+      elWatcher.fullyEnterViewport(throttle(function(){
+        $el.addClass('animated');
+      }, 100, {
+        'leading': true
+      }));
+
+    });
+
   }
 
 });

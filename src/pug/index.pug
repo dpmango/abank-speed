@@ -19,7 +19,7 @@ block content
             .hero__description.wow(data-animation-delay=".5s" data-animation-class="wowFadeDown") Мобильное приложение <br />для ведения бизнеса в&nbsp;любом месте, <br />в&nbsp;любое время
             .hero__cta.wow(data-animation-delay=".65s" data-animation-class="wowFadeDown")
 
-              .step-nav__download
+              .app-icons
                 a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
                   i.icon.icon-appstore-logo
                 a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
@@ -36,12 +36,12 @@ block content
       // info card
       .info-card
         .info-card__col
-          .info-card__image.info-card__image--1
+          .info-card__image.info-card__image--1.wow2.moveLeft
             img(src='img/illustration-1-check.png' srcset='img/illustration-1-check@2x.png 2x')
 
         .info-card__col
-          .info-card__content
-            .heading.heading_size_m Оплата счёта по&nbsp;файлу <br />или фото
+          .info-card__content.info-card__content--1
+            .heading.heading_size_l Оплата счёта по&nbsp;файлу <br />или фото
             p Технология распознавания счёта <br />
               | ускоряет процесс оплаты. Просто <br />
               | сделайте фото счёта или загрузите <br />
@@ -53,26 +53,26 @@ block content
           // info card
           .info-card.info-card--reverse
             .info-card__col
-              .info-card__image.info-card__image--2
+              .info-card__image.info-card__image--2.wow2.moveRight
                 img(src='img/illustration-2-statistics.png' srcset='img/illustration-2-statistics@2x.png 2x')
 
             .info-card__col
               .info-card__content
-                .heading.heading_size_m Финансовая аналитика&nbsp;&mdash; <br />наглядно, просто, всегда <br />под рукой!
+                .heading.heading_size_l Финансовая аналитика&nbsp;&mdash; <br />наглядно, просто, всегда <br />под рукой!
                 p Всегда будьте в&nbsp;курсе финансов <br />
                   | вашей компании&nbsp;&mdash; финансовая <br />
                   | аналитика по&nbsp;доходам и&nbsp;расходам <br />
                   | бизнеса в&nbsp;удобном формате.
 
       // info card
-      .info-card
+      .info-card.info-card--pad
         .info-card__col
-          .info-card__image.info-card__image--3
+          .info-card__image.info-card__image--3.wow2.moveLeft
             img(src='img/illustration-3-send.png' srcset='img/illustration-3-send@2x.png 2x')
 
         .info-card__col
-          .info-card__content
-            .heading.heading_size_m Моментальное выставление <br />счёта вашим клиентам
+          .info-card__content.info-card__content--3
+            .heading.heading_size_l Моментальное выставление <br />счёта вашим клиентам
             p Выставляйте счета клиентам без сложных <br />
               | бухгалтерских программ. Отправляйте <br />
               | счета по&nbsp;почте или в&nbsp;мессенджеры <br />
@@ -84,12 +84,12 @@ block content
           // info card
           .info-card.info-card--reverse
             .info-card__col
-              .info-card__image.info-card__image--4
+              .info-card__image.info-card__image--4.wow2.moveRight
                 img(src='img/illustration-4-card.png' srcset='img/illustration-4-card@2x.png 2x')
 
             .info-card__col
               .info-card__content
-                .heading.heading_size_m Выпустить виртуальную <br />карту за&nbsp;60&nbsp;секунд
+                .heading.heading_size_l Выпустить виртуальную <br />карту за&nbsp;60&nbsp;секунд
                 p Моментально откройте виртуальную <br />
                   | карту в&nbsp;мобильном банке. <br />
                   | Тут&nbsp;же совершайте покупки <br />
@@ -113,7 +113,7 @@ block content
               | Альфа-Банка&nbsp;&mdash; в&nbsp;любое время.
           .benefits-list__col
             .benefits-list__icon
-              +icon('ico-card-list')
+              +icon('ico-chat')
             .heading.heading_size_m Связь с банком
             p Чат со&nbsp;специалистами банка <br />
               | прямо в&nbsp;приложении, доступен <br />
@@ -122,7 +122,7 @@ block content
               | в&nbsp;течение нескольких минут.
           .benefits-list__col
             .benefits-list__icon
-              +icon('ico-chat')
+              +icon('ico-card-list')
             .heading.heading_size_m Контроль карт
             p История платежей по карте, информация 
               | по условиям обслуживания, 
@@ -156,10 +156,10 @@ block content
       
   // STEPS
   .steps(data-target="issue-card")
-    .container.container--narrow
+    .container
       .steps__wrapper
         .steps__left
-          h2.heading.heading_size_l Откройте виртуальную карту <span class="br-mobile"></span><br>в четыре шага в мобильном <span class="br-mobile"></span>банке
+          h2.heading.heading_size_l Как начать пользоваться<br />мобильным банком?
           // step nav
           .step-nav
             .step-nav__el
@@ -167,8 +167,8 @@ block content
                 .icon.icon-circle
                   span 1
               .step-nav__content
-                span.step-nav__name Установите приложение <span class="br-mobile"></span><br>«Альфа-Бизнес Мобайл».
-                .step-nav__download
+                span.step-nav__name Установите бесплатное приложение <br/>&laquo;Альфа-Бизнес Мобайл&raquo;.
+                .app-icons
                   a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
                     i.icon.icon-appstore-logo
                   a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
@@ -180,14 +180,14 @@ block content
                 .icon.icon-circle
                   span 2
               .step-nav__content
-                span.step-nav__name Оставьте заявку на открытие счёта <span class="br-mobile"></span><br>в приложении. 
+                span.step-nav__name Оставьте заявку на&nbsp;открытие расчётного <br>счёта для бизнеса в&nbsp;приложении.
             //el
             .step-nav__el(js-toggle-video data-video="2")
               .step-nav__icon
                 .icon.icon-circle
                   span 3
               .step-nav__content
-                span.step-nav__name Введите логин и&nbsp;пароль, как в&nbsp;интернет-банке. <br />Приложение готово для использования!
+                span.step-nav__name Введите логин и&nbsp;пароль, как в&nbsp;интернет-банке. Приложение готово для использования!
 
         .steps__right
           .steps__video
@@ -203,32 +203,31 @@ block content
   // SCOPE
   .scope
     .container.container--narrow
-      h2.heading.heading_size_l Еще нет счёта в Альфа-Банке? <span class="br-mobile"></span><br> Удобные сервисы для бизнеса
+      h2.heading.heading_size_l Ещё нет счёта в&nbsp;Альфа-Банке? <br>Удобные сервисы для ведения бизнеса
       .scope__wrapper
         .scope__left
           .scope__list
             .scope__list-el
-              .scope__list-name Обслуживание — от 490₽<span class="br-mobile"></span> в месяц
-              .scope__list-desc Или бесплатно, если нет оборотов, <span class="br-mobile"></span>с тарифом <br>для начинающих <span class="br-mobile"></span>предпринимателей «На старт».
+              .scope__list-name Обслуживание&nbsp;&mdash; от&nbsp;490₽ в&nbsp;месяц
+              .scope__list-desc Или бесплатно, если нет оборотов, с&nbsp;тарифом <br />для начинающих предпринимателей &laquo;На&nbsp;старт&raquo;
             .scope__list-el
-              .scope__list-name Длинный платёжный день
-              .scope__list-desc Проведение платежей день в день <span class="br-mobile"></span>круглосуточно <br>и даже в выходные дни
-              //- .scope__list-desc Проведение платежа день в день <span class="br-mobile"></span>круглосуточно,<br>и в выходные дни.
+              .scope__list-name Карты для бизнеса
+              .scope__list-desc Внесение и&nbsp;снятие наличных, оплата товаров <br />и&nbsp;услуг без выставления счетов.
             .scope__list-el
               .scope__list-name Бесплатная бухгалтерия
-              .scope__list-desc Автоматическая оплата налогов <span class="br-mobile"></span>для индивидуальных <br>предпринимателей <span class="br-mobile"></span>на УСН 6%.
-
+              .scope__list-desc Простая оплата налогов и&nbsp;взносов для индивидуальных <br />предпринимателей на&nbsp;УСН 6%.<br />
+        
         .scope__right
           .scope__list
             .scope__list-el
               .scope__list-name Персональный менеджер
-              .scope__list-desc Всегда на связи, чтобы ответить на любые <span class="br-mobile"></span>вопросы<br>удобным для вас способом.
+              .scope__list-desc Всегда на&nbsp;связи, чтобы ответить на&nbsp;любые вопросы<br />удобным для вас способом.
             .scope__list-el
-              .scope__list-name Помощь в поиске клиентов
-              .scope__list-desc Получите до 62 000 рублей <span class="br-mobile"></span>на продвижение своего<br>дела в интернете.
+              .scope__list-name Помощь в&nbsp;поиске клиентов
+              .scope__list-desc Получите до&nbsp;62&nbsp;000 рублей на&nbsp;продвижение своего<br />дела в&nbsp;интернете.
             .scope__list-el
               .scope__list-name Удобный интернет-банк
-              .scope__list-desc Работает на любом компьютере.
+              .scope__list-desc Работает на&nbsp;любом компьютере.
       
       .scope__cta
         a(href="https://alfabank.ru/sme/agent/virtual_card_rko" target="_blank" js-paste-link-open).button.button_size_l
