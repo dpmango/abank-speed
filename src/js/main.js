@@ -16,7 +16,6 @@ $(document).ready(function(){
     legacySupport();
     initScrollMonitor();
     initVideos();
-    initVideos();
     _window.on('resize', debounce(initVideos, 200))
     initSmartBanner();
     initTeleport();
@@ -191,12 +190,12 @@ $(document).ready(function(){
         }, 2000)
       });
 
-      _document.on('click', '[js-toggle-video]', function(){
-        var videoId = $(this).data('video');
-        if ( _window.width() > 768 ){
-          playVideo(videoId);
-        }
-      });
+      // _document.on('click', '[js-toggle-video]', function(){
+      //   var videoId = $(this).data('video');
+      //   if ( _window.width() > 768 ){
+      //     playVideo(videoId);
+      //   }
+      // });
 
       // refactor
       var allVideos = $('[js-video-logic] video');
