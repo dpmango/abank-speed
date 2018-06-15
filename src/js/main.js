@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     // Viewport units buggyfill
     window.viewportUnitsBuggyfill.init({
-      force: false,
+      force: true,
       refreshDebounceWait: 150,
       appendToBody: true
     });
