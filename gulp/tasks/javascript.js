@@ -8,6 +8,7 @@ var config      = require('../config');
 
 gulp.task('javascript:vendor', function() {
   return gulp.src([
+      path.resolve('node_modules', 'typograf/dist/typograf.min.js'),
       path.resolve('bower_components', 'jquery/dist/jquery.min.js'),
       path.resolve('bower_components', 'svg4everybody/dist/svg4everybody.min.js'),
       path.resolve('bower_components', 'viewport-units-buggyfill/viewport-units-buggyfill.js'),

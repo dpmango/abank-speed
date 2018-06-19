@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+  (function() {
+    var tp = new Typograf({
+      locale: ['ru', 'en-US'],
+      ascii_only: false
+    });
+    var elem = document.querySelector('body');
+    elem.innerHTML = tp.execute(elem.innerHTML);
+  })();
+
   //////////
   // Global variables
   //////////
@@ -15,8 +24,8 @@ $(document).ready(function(){
     handleUTM();
     legacySupport();
     initScrollMonitor();
-    initVideos();
-    _window.on('resize', debounce(initVideos, 200))
+    // initVideos();
+    // _window.on('resize', debounce(initVideos, 200))
     initSmartBanner();
     initTeleport();
 
