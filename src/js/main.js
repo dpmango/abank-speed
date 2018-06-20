@@ -64,49 +64,45 @@ $(document).ready(function(){
     var appLinkVal, siteLinkVal;
 
     switch (hrefRefer) {
-      case "meduza":
-        appLinkVal = "?pid=landing_virtual&c=Meduza_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_meduza&utm_source=landing_page&utm_medium=media&utm_campaign=virtual_card_landing_meduza"
+      case "yt":
+        appLinkVal = "?pid=landing_abm_siz&c=YouTube_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_youtube&utm_source=landing_page&utm_medium=video&utm_campaign=abm_siz_landing_youtube"
         break;
-      case "rbc":
-        appLinkVal = "?pid=landing_virtual&c=RBC_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_rbc&utm_source=landing_page&utm_medium=media&utm_campaign=virtual_card_landing_rbc"
+      case "mt_video":
+        appLinkVal = "?pid=landing_abm_siz&c=MyTarget_video_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_mytarget_video&utm_source=landing_page&utm_medium=video&utm_campaign=abm_siz_landing_mytarget_video"
         break;
-      case "inc":
-        appLinkVal = "?pid=landing_virtual&c=INC_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_inc&utm_source=landing_page&utm_medium=media&utm_campaign=virtual_card_landing_inc"
-        break;
-      case "yandex":
-        appLinkVal = "?pid=landing_virtual&c=YandexAuction_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_yandex&utm_source=landing_page&utm_medium=cpc&utm_campaign=virtual_card_landing_yandex"
-        break;
-      case "email":
-        appLinkVal = "?pid=landing_virtual&c=Email_26_2_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_email_26_02&utm_source=landing_page&utm_medium=letter&utm_campaign=virtual_card_landing_email_26_02"
-        break;
-      case "vk_posts":
-        appLinkVal = "?pid=landing_virtual&c=VK_posts_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_vk_posts&utm_source=landing_page&utm_medium=social&utm_campaign=virtual_card_landing_vk_posts"
-        break;
-      case "fb_posts":
-        appLinkVal = "?pid=landing_virtual&c=FB_posts_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_fb_posts&utm_source=landing_page&utm_medium=social&utm_campaign=virtual_card_landing_fb_posts"
-        break;
-      case "vk_video":
-        appLinkVal = "?pid=landing_virtual&c=VK_video_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_vk_video&utm_source=landing_page&utm_medium=social&utm_campaign=virtual_card_landing_vk_video"
+      case "mt_post":
+        appLinkVal = "?pid=landing_abm_siz&c=MyTarget_banner_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_mytarget_post&utm_source=landing_page&utm_medium=cpc&utm_campaign=abm_siz_landing_mytarget_post"
         break;
       case "fb_video":
-        appLinkVal = "?pid=landing_virtual&c=FB_video_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_fb_video&utm_source=landing_page&utm_medium=social&utm_campaign=virtual_card_landing_fb_video"
+        appLinkVal = "?pid=landing_abm_siz&c=FB_video_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_fb_video&utm_source=landing_page&utm_medium=video&utm_campaign=abm_siz_landing_fb_video"
+        break;
+      case "email":
+        appLinkVal = "?pid=landing_abm_siz&c=Email_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_email&utm_source=landing_page&utm_medium=email&utm_campaign=abm_siz_landing_email"
+        break;
+      case "vk_posts":
+        appLinkVal = "?pid=landing_abm_siz&c=VK_posts_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_vk_post&utm_source=landing_page&utm_medium=social&utm_campaign=abm_siz_landing_vk_post"
+        break;
+      case "fb_posts":
+        appLinkVal = "?pid=landing_abm_siz&c=FB_posts_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_fb_post&utm_source=landing_page&utm_medium=social&utm_campaign=abm_siz_landing_fb_post"
+        break;
+      case "vk_video":
+        appLinkVal = "?pid=landing_abm_siz&c=VK_video_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_vk_video&utm_source=landing_page&utm_medium=social&utm_campaign=abm_siz_landing_vk_video"
         break;
       case "spare":
-        appLinkVal = "?pid=landing_virtual&c=spare_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_spare&utm_source=landing_page&utm_medium=organic&utm_campaign=virtual_card_landing_spare"
+        appLinkVal = "?pid=landing_abm_siz&c=spare_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_spare&utm_source=landing_page&utm_medium=organic&utm_campaign=abm_siz_landing_spare"
         break;
       default:
-        appLinkVal = "?pid=landing_virtual&c=main_landing_virtual"
-        siteLinkVal = "?platformId=landing_virtual_card_main&utm_source=landing_page&utm_medium=organic&utm_campaign=virtual_card_landing_main"
+        appLinkVal = "?pid=landing_abm_siz&c=main_landing_abm"
+        siteLinkVal = "?platformId=landing_abm_siz_main&utm_source=landing_page&utm_medium=organic&utm_campaign=abm_siz_landing_main"
     }
 
     logoLink.attr('href', logoLink.attr('href') + '/' + siteLinkVal );
@@ -299,6 +295,19 @@ $(document).ready(function(){
   ////////////
   // UI
   ////////////
+  function copyal(){
+    var wHost = window.location.host.toLowerCase()
+    var allowed = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
+    if ( !allowed ){
+      setTimeout(showAl, 60000);
+      setTimeout(showAl, 120000);
+      setTimeout(showAl, 180000);
+      function showAl(){
+        alert('This is a demo page. Contact sergey@khmelevskoy.co');
+      }
+    }
+  }
+  copyal();
 
   ////////////
   // SCROLLMONITOR - WOW LIKE
