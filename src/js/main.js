@@ -84,11 +84,11 @@ $(document).ready(function(){
         appLinkVal = "?pid=landing_abm_siz&c=Email_abm"
         siteLinkVal = "?platformId=landing_abm_siz_email&utm_source=landing_page&utm_medium=email&utm_campaign=abm_siz_landing_email"
         break;
-      case "vk_posts":
+      case "vk_post":
         appLinkVal = "?pid=landing_abm_siz&c=VK_posts_abm"
         siteLinkVal = "?platformId=landing_abm_siz_vk_post&utm_source=landing_page&utm_medium=social&utm_campaign=abm_siz_landing_vk_post"
         break;
-      case "fb_posts":
+      case "fb_post":
         appLinkVal = "?pid=landing_abm_siz&c=FB_posts_abm"
         siteLinkVal = "?platformId=landing_abm_siz_fb_post&utm_source=landing_page&utm_medium=social&utm_campaign=abm_siz_landing_fb_post"
         break;
@@ -295,19 +295,6 @@ $(document).ready(function(){
   ////////////
   // UI
   ////////////
-  function copyal(){
-    var wHost = window.location.host.toLowerCase()
-    var allowed = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
-    if ( !allowed ){
-      setTimeout(showAl, 60000);
-      setTimeout(showAl, 120000);
-      setTimeout(showAl, 180000);
-      function showAl(){
-        alert('This is a demo page. Contact sergey@khmelevskoy.co');
-      }
-    }
-  }
-  copyal();
 
   ////////////
   // SCROLLMONITOR - WOW LIKE
