@@ -1,0 +1,237 @@
+// hero block
+.hero
+  .container
+    .hero__wrapper
+      .hero__left
+        a(href="https://alfabank.ru/sme" target="_blank" js-paste-link-logo).hero__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+      .hero__right
+        .hero__content
+          .hero__app.wow(data-animation-delay=".2s" data-animation-class="wowFadeDown")
+            i.icon.icon-app-icon
+          h1.hero__heading.wow(data-animation-delay=".35s" data-animation-class="wowFadeDown") Альфа-Бизнес Мобайл. <br />Скорость имеет значение
+          .hero__description.wow(data-animation-delay=".5s" data-animation-class="wowFadeDown") Мобильное приложение <br />для ведения бизнеса в&nbsp;любом месте, <br />в&nbsp;любое время
+          .hero__cta.wow(data-animation-delay=".65s" data-animation-class="wowFadeDown")
+
+            .app-icons
+              a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
+                i.icon.icon-appstore-logo
+              a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
+                i.icon.icon-google-play-logo
+      
+      //- .hero__scroll.wow(data-animation-delay="1.5s" js-scrollTo data-scroll-to="second-block")
+      //-   .hero__scroll-wrap
+      //-     +icon('ico-scroll-arrow')
+
+// INFO
+.info(data-target="second-block")
+  .container
+    
+    // info card
+    .info-card
+      .info-card__col
+        .info-card__image.info-card__image--1.wow2.moveLeft
+          img(src='img/illustration-1-check.png' srcset='img/illustration-1-check@2x.png 2x')
+
+      .info-card__col
+        .info-card__content.info-card__content--1
+          .heading.heading_size_l Оплата счёта по&nbsp;файлу <br />или фото
+          p Технология распознавания счёта <br />
+            | ускоряет процесс оплаты. Просто <br />
+            | сделайте фото счёта или загрузите <br />
+            | файл в&nbsp;форматах: jpg, pdf, xls <br />
+            | или xlsx.
+
+    .plato
+      .plato__wrap
+        // info card
+        .info-card.info-card--reverse
+          .info-card__col
+            .info-card__image.info-card__image--2.wow2.moveRight
+              img(src='img/illustration-2-statistics.png' srcset='img/illustration-2-statistics@2x.png 2x')
+
+          .info-card__col
+            .info-card__content
+              .heading.heading_size_l Финансовая аналитика&nbsp;&mdash; <br />наглядно, просто, всегда <br />под рукой!
+              p Всегда будьте в&nbsp;курсе финансов <br />
+                | вашей компании&nbsp;&mdash; финансовая <br />
+                | аналитика по&nbsp;доходам и&nbsp;расходам <br />
+                | бизнеса в&nbsp;удобном формате.
+
+    // info card
+    .info-card.info-card--pad
+      .info-card__col
+        .info-card__image.info-card__image--3.wow2.moveLeft
+          img(src='img/illustration-3-send.png' srcset='img/illustration-3-send@2x.png 2x')
+
+      .info-card__col
+        .info-card__content.info-card__content--3
+          .heading.heading_size_l Моментальное выставление <br />счёта вашим клиентам
+          p Выставляйте счета клиентам без сложных <br />
+            | бухгалтерских программ. Отправляйте <br />
+            | счета по&nbsp;почте или&nbsp;в&nbsp;мессенджеры <br />
+            | прямо из&nbsp;приложения &laquo;Альфа-Бизнес <br />
+            | Мобайл&raquo;.
+
+    .plato
+      .plato__wrap
+        // info card
+        .info-card.info-card--reverse
+          .info-card__col
+            .info-card__image.info-card__image--4.wow2.moveRight
+              img(src='img/illustration-4-card.png' srcset='img/illustration-4-card@2x.png 2x')
+
+          .info-card__col
+            .info-card__content
+              .heading.heading_size_l Виртуальная карта<br/> за&nbsp;60&nbsp;секунд
+              p Моментально откройте виртуальную <br />
+                | карту в&nbsp;мобильном банке.<br />Тут&nbsp;же&nbsp;совершайте покупки <br />
+                | в&nbsp;интернете или&nbsp;привяжите карту <br />
+                | к&nbsp;Apple Pay, Samsung Pay <br />
+                | или Google Pay для оплаты <br />
+                | в&nbsp;торговых точках.
+
+  // BENEFITS
+  .container
+    .container-offset
+      h2.heading.heading_size_l И&nbsp;это ещё не&nbsp;всё, другие преимущества <br />Альфа-Бизнес Мобайл
+      .benefits-list
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-time')
+          .heading.heading_size_m Быстрые платежи
+          p Быстрые платежи и&nbsp;переводы. <br />
+            | Платите своим партнерам <br />
+            | с&nbsp;01:00 до&nbsp;20:30, а&nbsp;клиентам <br />
+            | Альфа-Банка&nbsp;&mdash; в&nbsp;любое время.
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-chat')
+          .heading.heading_size_m Связь с банком
+          p Чат со&nbsp;специалистами банка <br />
+            | прямо в&nbsp;приложении, доступен <br />
+            | 7&nbsp;дней в&nbsp;неделю, 24&nbsp;часа в&nbsp;сутки. <br />
+            | Решение любого вопроса <br />
+            | в&nbsp;течение нескольких минут.
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-card-list')
+          .heading.heading_size_m Контроль карт
+          p История платежей по&nbsp;карте, информация по&nbsp;условиям обслуживания, 
+            | возможность временно заблокировать 
+            | и разблокировать карту, а также 
+            | сменить пин-код.
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-account')
+          .heading.heading_size_m Полная информация <br />по&nbsp;счетам
+          p Актуальные остатки по&nbsp;счёту, <br />
+            | история операций, контроль <br />
+            | оборотных средств&nbsp;&mdash; <br />
+            | всегда под рукой.
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-ready-send')
+          .heading.heading_size_m Выгрузка выписки <br />и&nbsp;платёжек
+          p Отправляйте выписку бухгалтеру <br />
+            | прямо из&nbsp;приложения. <br />
+            | Отправляйте исполненные <br />
+            | платёжки по&nbsp;почте.
+        .benefits-list__col
+          .benefits-list__icon
+            +icon('ico-filter')
+          .heading.heading_size_m Управление счетами<br /> компаний
+          p Открытие дополнительного расчётного <br />
+            | счёта и&nbsp;счёта &laquo;Налоговая копилка&raquo;. <br />
+            | Перевод между своими счетами&nbsp;&mdash; <br />
+            | юридического и&nbsp;физического лица.
+    
+// STEPS
+.steps(data-target="issue-card")
+  .container
+    .steps__wrapper
+      .steps__left
+        h2.heading.heading_size_l Как начать пользоваться <br />мобильным банком?
+        // step nav
+        .step-nav
+          .step-nav__el
+            .step-nav__icon
+              .icon.icon-circle
+                span 1
+            .step-nav__content
+              span.step-nav__name Установите бесплатное приложение <br/>&laquo;Альфа-Бизнес Мобайл&raquo;.
+              .app-icons
+                a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
+                  i.icon.icon-appstore-logo
+                a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
+                  i.icon.icon-google-play-logo
+                    
+          //el
+          .step-nav__el
+            .step-nav__icon
+              .icon.icon-circle
+                span 2
+            .step-nav__content
+              span.step-nav__name Оставьте заявку на&nbsp;открытие расчётного <br>счёта для бизнеса в&nbsp;приложении.
+          //el
+          .step-nav__el
+            .step-nav__icon
+              .icon.icon-circle
+                span 3
+            .step-nav__content
+              span.step-nav__name Введите логин и&nbsp;пароль, как в&nbsp;интернет-банке. Приложение готово для использования!
+
+      .steps__right
+        .steps__video
+          img.steps__video-phone(src='img/iphone-x.png' srcset='img/iphone-x@2x.png 2x')
+          //- .steps__video-frame(js-video-logic)
+          //-   // place frame
+            
+// SCOPE
+.scope
+  .container.container--narrow
+    h2.heading.heading_size_l Ещё нет счёта в&nbsp;Альфа-Банке? <br>Удобные сервисы для ведения бизнеса
+    .scope__wrapper
+      .scope__left
+        .scope__list
+          .scope__list-el
+            .scope__list-name Обслуживание&nbsp;&mdash; от&nbsp;490₽ в&nbsp;месяц
+            .scope__list-desc Или бесплатно, если нет оборотов, с&nbsp;тарифом <br />для начинающих предпринимателей &laquo;На&nbsp;старт&raquo;.
+          .scope__list-el
+            .scope__list-name Карты для бизнеса
+            .scope__list-desc Внесение и&nbsp;снятие наличных, оплата товаров <br />и&nbsp;услуг без выставления счетов.
+          .scope__list-el
+            .scope__list-name Бесплатная бухгалтерия
+            .scope__list-desc Простая оплата налогов и&nbsp;взносов для&nbsp;индивидуальных <br />предпринимателей на&nbsp;УСН&nbsp;6%.<br />
+      
+      .scope__right
+        .scope__list
+          .scope__list-el
+            .scope__list-name Персональный менеджер
+            .scope__list-desc Всегда на&nbsp;связи, чтобы ответить на&nbsp;любые вопросы<br />удобным для вас способом.
+          .scope__list-el
+            .scope__list-name Помощь в&nbsp;поиске клиентов
+            .scope__list-desc Получите до&nbsp;62&nbsp;000 рублей на&nbsp;продвижение своего<br />дела в&nbsp;интернете.
+          .scope__list-el
+            .scope__list-name Удобный интернет-банк
+            .scope__list-desc Полноценное управление счётом с&nbsp;компьютера. Работает в&nbsp;любых браузерах и&nbsp;операционных системах.
+    
+    .scope__cta
+      a(href="https://alfabank.ru/sme/agent/abm_rko" target="_blank" js-paste-link-open).button.button_size_l
+        span Открыть счёт в Альфа-Банке
+
+// FOOTER
+footer.footer
+  .container.container--narrow
+    .footer__wrapper
+      .footer__left
+        a(href="tel:+74957555858").footer__phone +7 (495) 755-58-58
+        span Получение информации и проведение операций 24/7
+      .footer__right
+        .footer__socials
+          a(href="https://www.facebook.com/alfabank.sme" target="_blank")
+            i.icon.icon-social-facebook
+          a(href="https://vk.com/alfabank_sme" target="_blank")
+            i.icon.icon-social-vk
+                      
+        span ©2018 Альфа-Банк. Ген<i class="text-mobile">.</i><i class="text-desktop">еральная</i> лицензия ЦБ РФ №1326
