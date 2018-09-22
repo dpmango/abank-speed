@@ -15,6 +15,7 @@ gulp.task('javascript:vendor', function() {
       // path.resolve('bower_components', 'slick-carousel/slick/slick.min.js'),
       // path.resolve('bower_components', 'swiper/dist/js/swiper.min.js'),
       // path.resolve('bower_components', 'magnific-popup/dist/jquery.magnific-popup.min.js'),
+      path.resolve('bower_components', 'jquery-mask-plugin/dist/jquery.mask.min.js'),
       path.resolve('bower_components', 'scrollMonitor/scrollMonitor.js'),
       config.src.js + '/vendor/**/*.js'
      ])

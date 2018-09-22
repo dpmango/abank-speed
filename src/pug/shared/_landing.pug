@@ -11,17 +11,19 @@
             i.icon.icon-app-icon
           h1.hero__heading.wow(data-animation-delay=".35s" data-animation-class="wowFadeDown") Альфа-Бизнес Мобайл. <br />Скорость имеет значение
           .hero__description.wow(data-animation-delay=".5s" data-animation-class="wowFadeDown") Мобильное приложение <br />для ведения бизнеса в&nbsp;любом месте, <br />в&nbsp;любое время
-          .hero__cta.wow(data-animation-delay=".65s" data-animation-class="wowFadeDown")
+          
+          .hero__apps.wow(data-animation-delay=".65s" data-animation-class="wowFadeDown")
 
             .app-icons
               a(href="https://app.appsflyer.com/id555970430" target="_blank" js-paste-link-appstore)
                 i.icon.icon-appstore-logo
               a(href="https://app.appsflyer.com/ru.alfabank.oavdo.amc" target="_blank" js-paste-link-google)
                 i.icon.icon-google-play-logo
-      
-      //- .hero__scroll.wow(data-animation-delay="1.5s" js-scrollTo data-scroll-to="second-block")
-      //-   .hero__scroll-wrap
-      //-     +icon('ico-scroll-arrow')
+          
+          .hero__cta.wow(data-animation-delay=".85s" data-animation-class="wowFadeDown")
+            a(href="#" js-scrollTo data-scroll-to="cta-form").button.button_size_l.button--block
+              span Открыть счёт
+              
 
 // INFO
 .info(data-target="second-block")
@@ -215,10 +217,28 @@
           .scope__list-el
             .scope__list-name Удобный интернет-банк
             .scope__list-desc Полноценное управление счётом с&nbsp;компьютера. Работает в&nbsp;любых браузерах и&nbsp;операционных системах.
+          
+    // CTA FORM - redirect to abank
+    .scope__cta.cta-form(data-target="cta-form")
+      .cta-form__wrapper
+        .cta-form__heading
+          h2.heading.heading_size_l Откройте счёт в Альфа-Банке прямо сейчас!
+          .cta-form__description Оставьте свой номер телефона и мы откроем Расчетный счет <br /> без визита в банк
+
+        form(js-cta-form).cta-form__form
+          input.cta-form__input(
+            autocomplete="off" autocorrect="off" autocapitalize="none"
+            type="tel" 
+            name="phone" 
+            placeholder="Ваш телефон" 
+            js-cta-phone)
+          .cta-form__checkbox
+            input(type="checkbox" id="agree" name="agree" checked js-cta-checkbox)
+            label(for="agree")
+              span Я согласен на 
+                a(href="#") обработку персональных данных
+          button(type="submit" js-cta-button disabled).button.button_size_l Отправить
     
-    .scope__cta
-      a(href="https://alfabank.ru/sme/agent/abm_rko" target="_blank" js-paste-link-open).button.button_size_l
-        span Открыть счёт в Альфа-Банке
 
 // FOOTER
 footer.footer

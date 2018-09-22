@@ -28,6 +28,7 @@ $(document).ready(function(){
     // _window.on('resize', debounce(initVideos, 200))
     initSmartBanner();
     initTeleport();
+    initMasks();
 
   }
 
@@ -57,7 +58,6 @@ $(document).ready(function(){
     var logoLink = $('[js-paste-link-logo]');
     var appstoreLink = $('[js-paste-link-appstore]');
     var googleLink = $('[js-paste-link-google]');
-    var openLink = $('[js-paste-link-open]');
 
     var hrefRefer = window.location.pathname.slice(1);
 
@@ -106,7 +106,6 @@ $(document).ready(function(){
     }
 
     logoLink.attr('href', logoLink.attr('href') + '/' + siteLinkVal );
-    openLink.attr('href', openLink.attr('href') + '/' + siteLinkVal );
     appstoreLink.attr('href', appstoreLink.attr('href') + appLinkVal );
     googleLink.attr('href', googleLink.attr('href') + appLinkVal );
 
@@ -295,6 +294,94 @@ $(document).ready(function(){
   ////////////
   // UI
   ////////////
+  // Masked input
+  function initMasks(){
+    $("[js-cta-phone]").mask("+7 000 000-00-00", {
+      // placeholder: "+7 (___) ___-____"
+    });
+  }
+
+  // CTA FORM LOGIC
+  var $form = $('[js-cta-form]')
+  var $formInput = $('[js-cta-phone]');
+  var $formCheckbox = $('[js-cta-checkbox]')
+  var $formButton = $('[js-cta-button]');
+
+
+  $form.on('change', function(e){
+
+  })
+  $form.on('submit', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    if ( formIsValid() ){
+      $.post('https://anketa.alfabank.ru/ona/lead?returnTo=newCompany', {
+        "phone": "79001234567",
+      	"advCode": "alfasite",
+      	"platformId": "Dud_abm_landing_siz"
+        // "region": "test"
+      }, function(res){
+        console.log(res)
+      })
+    }
+
+  })
+  // $formInput.on('blur', function(e){
+  //   // console.log('blur')
+  // })
+  $formInput.on('focus', function(e){
+    // focus once only - nothing hapens on blur
+    $form.addClass('is-focused');
+    if ( $formInput.val().length < 3 ){
+      $(this).val("+7 ");
+    }
+  })
+
+  $formInput.on('keyup', function(e){
+    // always keep + 7 at the very beggiing
+    if ( $formInput.val().length < 3 ){
+      $(this).val("+7 ");
+      e.preventDefault();
+    }
+
+    // assume that form is valid because mask gives 16 symbols
+    controllButton();
+    toggleCheckbox();
+  })
+
+  $formCheckbox.on('change', function(){
+    controllButton();
+  })
+
+  function phoneIsValid(){
+    return $formInput.val().length === 16
+  }
+
+  function formIsValid(){
+    return phoneIsValid() && $formCheckbox.is(':checked')
+  }
+
+  function controllButton(){
+    if ( formIsValid() ){
+      $formButton.attr('disabled', false)
+      $form.addClass('is-valid')
+    } else {
+      $formButton.attr('disabled', true);
+      $form.removeClass('is-valid');
+    }
+  }
+
+  function toggleCheckbox(){
+    if ( phoneIsValid() ){
+      // $form.addClass('is-phone-valid')
+      $formCheckbox.parent().fadeIn(250)
+    } else {
+      // $form.removeClass('is-phone-valid')
+      $formCheckbox.parent().fadeOut(250)
+    }
+  }
+
 
   ////////////
   // SCROLLMONITOR - WOW LIKE
