@@ -71,9 +71,8 @@
       &:checked
         + label
           &::before
-            background: #000
           &::after
-            transform: translateY(-50%) scale(1)
+            transform: scale(1)
     label
       display: block
       width: 100%
@@ -82,8 +81,7 @@
       &::before
         position: absolute
         left: 0
-        top: 50%
-        transform: translateY(-50%)
+        top: 0
         display: inline-block
         content: ' '
         size: 15px
@@ -96,16 +94,16 @@
         transition: all $transitionSpeed ease-in-out
       &::after
         position: absolute
-        left: 6px
-        top: 50%
-        transform: translateY(-50%) scale(0)
+        top: -2px
+        left: 4px
+        transform: scale(0)
         display: inline-block
         content: ' '
-        size: 10px
-        border-radius: 50%
-        // background-image: svg-load('../../images/svg/checkbox.svg')
-        // background-repeat: no-repeat
-        // background-position: center
+        size: 15px
+        background-image: svg-load('../icons/checkmark.svg', fill="#fff")
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
         transition: transform .2s ease
       span
         display: inline-block
@@ -116,7 +114,7 @@
         font-size: 14px
         cursor: pointer
         a
-          display: inline-block
+          display: inline
           border-bottom: 1px solid rgba(white, .5)
           transition: .25s $ease
           &:hover

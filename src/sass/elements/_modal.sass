@@ -1,0 +1,82 @@
+// Styles for dialog window
+.mfp-wrap
+  -webkit-overflow-scrolling: touch
+  -webkit-transform: translateZ(0)
+
+.mfp-container
+  padding-left: 30px
+  padding-right: 30px
+  +r($tablet)
+    padding-left: 35px
+    padding-right: 35px
+
+.modal
+  background: white
+  padding: 0
+  text-align: left
+  max-width: 850px
+  margin: 40px auto
+  border-radius: 4px
+  box-shadow: 0 2px 15px rgba(black, .1)
+  position: relative
+  &__close
+    position: absolute
+    top: 0px
+    right: 0px
+    -webkit-apperance: none
+    background: transparent
+    box-shadow: none
+    border: 0
+    font-size: 0
+    padding: 12px
+    cursor: pointer
+    transition: .25s $ease
+    .ico
+      font-size: 25px
+    &:hover
+      opacity: .7
+
+  &__text
+    font-size: 16px
+    line-height: 1.42857143
+    padding: 60px 70px
+    p
+      max-width: 700px
+      margin-bottom: 30px
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+
+
++r($tablet)
+  .modal
+    // padding: 20px 20px
+    border-radius: 0
+    &__text
+      padding-left: 30px
+      padding-right: 30px
+      padding-bottom: 40px
+      padding-top: 55px
+      font-size: 13px
+
+
+.popup-buble
+  .modal
+    opacity: 0
+    transition: all 0.2s ease-in-out
+    transform: scale(0.8)
+  &.mfp-ready .modal
+    opacity: 1
+    transform: scale(1)
+  &.mfp-removing .modal
+    transform: scale(0.8)
+    opacity: 0
+  &.mfp-bg
+    background: rgba(#131F31, .6)
+    opacity: 0
+    transition: opacity 0.3s $ease
+  &.mfp-ready.mfp-bg
+    opacity: 1
+  &.mfp-removing.mfp-bg
+    opacity: 0

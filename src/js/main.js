@@ -29,6 +29,7 @@ $(document).ready(function(){
     initSmartBanner();
     initTeleport();
     initMasks();
+    initModals();
 
   }
 
@@ -289,6 +290,44 @@ $(document).ready(function(){
       }
     })
   }
+
+  ////////////
+  // MODALS
+  ////////////
+
+  function initModals(){
+    // Magnific Popup
+    var startWindowScroll = 0;
+    $('[js-popup]').magnificPopup({
+      type: 'inline',
+      fixedContentPos: true,
+      fixedBgPos: true,
+      overflowY: 'auto',
+      closeBtnInside: true,
+      preloader: false,
+      midClick: true,
+      removalDelay: 300,
+      mainClass: 'popup-buble',
+      closeMarkup: '<button title="%title%" type="button" class="modal__close"><svg class="ico ico-close"><use xlink:href="img/sprite.svg#ico-close"></use></svg></button>',
+      callbacks: {
+        beforeOpen: function() {
+          startWindowScroll = _window.scrollTop();
+          // $('html').addClass('mfp-helper');
+        },
+        close: function() {
+          // $('html').removeClass('mfp-helper');
+          _window.scrollTop(startWindowScroll);
+        }
+      }
+    });
+  }
+
+  function closeMfp(){
+    $.magnificPopup.close();
+  }
+
+  _document
+    .on('click', '.modal__close', closeMfp)
 
 
   ////////////
