@@ -346,7 +346,6 @@ $(document).ready(function(){
   var $formCheckbox = $('[js-cta-checkbox]')
   var $formButton = $('[js-cta-button]');
 
-
   $form.on('change', function(e){
 
   })
@@ -355,14 +354,38 @@ $(document).ready(function(){
     e.stopPropagation();
 
     if ( formIsValid() ){
-      $.post('https://anketa.alfabank.ru/ona/lead?returnTo=newCompany', {
-        "phone": "79001234567",
-      	"advCode": "alfasite",
-      	"platformId": "Dud_abm_landing_siz"
-        // "region": "test"
-      }, function(res){
-        console.log(res)
-      })
+
+      axios({
+        method: 'POST',
+        // url: "https://testjmb.alfabank.ru/ona/auth/login",
+        url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        data: {
+          "phone": "79001234567",
+        	"advCode": "alfasite",
+        	"platformId": "Dud_abm_landing_siz"
+        }
+        })
+        .then(function(res){
+          console.log(res)
+        })
+        .catch(function(err){
+          console.log(err)
+        })
+
+
+      // $.post('https://anketa.alfabank.ru/ona/lead?returnTo=newCompany', {
+      //   "phone": "79001234567",
+      // 	"advCode": "alfasite",
+      // 	"platformId": "Dud_abm_landing_siz"
+      //   // "region": "test"
+      // }, function(res){
+      //   console.log(res)
+      // }, "application/json")
     }
 
   })
