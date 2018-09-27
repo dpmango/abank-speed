@@ -357,43 +357,64 @@ $(document).ready(function(){
 
       var trimedPhone = $formInput.val().replace(/-|\s/g,"").substring(1);
 
-      axios({
+      // axios({
+      //   method: 'POST',
+      //   // crossdomain: true,
+      //   url: "https://cors-anywhere.herokuapp.com/https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
+      //   // url: "https://testjmb.alfabank.ru/ona/",
+      //   // url: "https://testjmb.alfabank.ru/ona/?userType=nc",
+      //   // url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
+      //   headers: {
+      //     // 'Content-Type': 'application/json',
+      //     'Content-Type': 'application/x-www-form-urlencoded',
+      //     // 'Accept': 'application/json',
+      //     'Accept': 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
+      //     // 'X-Requested-With': 'XMLHttpRequest'
+      //   },
+      //   data: {
+      //     "phone": trimedPhone,
+      //   	"advCode": "alfasite",
+      //   	"platformId": "Dud_abm_landing_siz"
+      //   }
+      //   })
+      //   .then(function(res){
+      //     console.log('proxy responce', res);
+      //     // window.location.href = res.headers["x-final-url"]
+      //
+      //   })
+      //   .catch(function(err){
+      //     console.log(err)
+      //     alert('сервер не ответил, перенаправляю вручную через window.location');
+      //     // window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
+      //   })
+
+      $.ajax({
         method: 'POST',
-        crossdomain: true,
-        url: "https://anketa.alfabank.ru/ona/lead",
-        // url: "https://testjmb.alfabank.ru/ona/",
-        // url: "https://testjmb.alfabank.ru/ona/?userType=nc",
-        // url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
-        headers: {
-          // 'Content-Type': 'application/json',
-          'Content-Type': 'application/x-www-form-urlencoded',
-          // 'Accept': 'application/json',
-          'Accept': 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
-          // 'X-Requested-With': 'XMLHttpRequest'
-        },
+        url: "https://anketa.alfabank.ru/ona/lead?userType=nc",
+        // url: 'https://cors-anywhere.herokuapp.com/https://anketa.alfabank.ru/ona/lead',
+        dataType: 'jsonp',
         data: {
           "phone": trimedPhone,
-        	"advCode": "alfasite",
-        	"platformId": "Dud_abm_landing_siz"
+          "advCode": "alfasite",
+          "platformId": "Dud_abm_landing_siz"
         }
-        })
-        .then(function(res){
-          console.log(res)
-        })
-        .catch(function(err){
-          console.log(err)
-          alert('сервер не ответил, перенаправляю вручную через window.location');
-          window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
-        })
+      })
+      .done(function(res){
+        console.log('done', res)
+      })
+      .always(function(res) {
+        console.log("always", res);
+        window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
+      });
 
-
-      // $.post('https://anketa.alfabank.ru/ona/lead?returnTo=newCompany', {
+      // $.post('https://anketa.alfabank.ru/ona/lead', {
       //   "phone": trimedPhone,
       // 	"advCode": "alfasite",
       // 	"platformId": "Dud_abm_landing_siz"
       // }, function(res){
       //   console.log(res)
       // }, "application/x-www-form-urlencoded")
+
     }
 
   })
