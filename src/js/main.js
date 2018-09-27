@@ -357,8 +357,10 @@ $(document).ready(function(){
 
       axios({
         method: 'POST',
-        // url: "https://testjmb.alfabank.ru/ona/auth/login",
-        url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
+        url: "https://anketa.alfabank.ru/ona/lead",
+        // url: "https://testjmb.alfabank.ru/ona/",
+        // url: "https://testjmb.alfabank.ru/ona/?userType=nc",
+        // url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',

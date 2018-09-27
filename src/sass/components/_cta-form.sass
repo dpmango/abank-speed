@@ -3,7 +3,7 @@
   background: #f03226
   color: white
   border-radius: 16px
-  padding: 40px 20px 100px
+  padding: 40px 30px 100px
   &__wrapper
     // display: flex
   &__heading
@@ -119,3 +119,32 @@
           transition: .25s $ease
           &:hover
             color: rgba(white, .7)
+
++r($desktop)
+  .cta-form
+    &__heading
+      .heading
+        text-align: center
+        margin-left: 0
+    &__description
+      max-width: 400px
+      margin-left: auto
+      margin-right: auto
+      font-size: 16px
+    &__checkbox
+      padding-left: 15px
+      label
+        span
+          padding-left: 25px
+
++r($tablet)
+  .cta-form
+    padding-bottom: 60px
+    &__heading
+
+    &__description
+      font-size: 13px
+
+    &__input
+      font-size: 17px
+      padding: 11px 10px
