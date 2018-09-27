@@ -355,6 +355,8 @@ $(document).ready(function(){
 
     if ( formIsValid() ){
 
+      var trimedPhone = $formInput.val().replace(/-|\s/g,"").substring(1);
+
       axios({
         method: 'POST',
         url: "https://anketa.alfabank.ru/ona/lead",
@@ -367,7 +369,7 @@ $(document).ready(function(){
           'X-Requested-With': 'XMLHttpRequest'
         },
         data: {
-          "phone": "79001234567",
+          "phone": trimedPhone,
         	"advCode": "alfasite",
         	"platformId": "Dud_abm_landing_siz"
         }
@@ -377,6 +379,8 @@ $(document).ready(function(){
         })
         .catch(function(err){
           console.log(err)
+          alert('сервер не ответил, перенаправляю вручную через window.location');
+          window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
         })
 
 
