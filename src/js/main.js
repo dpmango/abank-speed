@@ -359,14 +359,17 @@ $(document).ready(function(){
 
       axios({
         method: 'POST',
+        crossdomain: true,
         url: "https://anketa.alfabank.ru/ona/lead",
         // url: "https://testjmb.alfabank.ru/ona/",
         // url: "https://testjmb.alfabank.ru/ona/?userType=nc",
         // url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-Requested-With': 'XMLHttpRequest'
+          // 'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          // 'Accept': 'application/json',
+          'Accept': 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
+          // 'X-Requested-With': 'XMLHttpRequest'
         },
         data: {
           "phone": trimedPhone,
@@ -385,13 +388,12 @@ $(document).ready(function(){
 
 
       // $.post('https://anketa.alfabank.ru/ona/lead?returnTo=newCompany', {
-      //   "phone": "79001234567",
+      //   "phone": trimedPhone,
       // 	"advCode": "alfasite",
       // 	"platformId": "Dud_abm_landing_siz"
-      //   // "region": "test"
       // }, function(res){
       //   console.log(res)
-      // }, "application/json")
+      // }, "application/x-www-form-urlencoded")
     }
 
   })
