@@ -356,39 +356,7 @@ $(document).ready(function(){
     if ( formIsValid() ){
 
       var trimedPhone = $formInput.val().replace(/-|\s/g,"").substring(1);
-
-      // axios({
-      //   method: 'POST',
-      //   // crossdomain: true,
-      //   // url: "https://cors-anywhere.herokuapp.com/https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
-      //   // url: "https://testjmb.alfabank.ru/ona/",
-      //   // url: "https://testjmb.alfabank.ru/ona/?userType=nc",
-      //   // url: "https://anketa.alfabank.ru/ona/lead?returnTo=newCompany",
-      //   url: "https://anketa.alfabank.ru/ona/lead?userType=nc",
-      //   headers: {
-      //     // 'Content-Type': 'application/json',
-      //     'Content-Type': 'application/x-www-form-urlencoded',
-      //     // 'Accept': 'application/json',
-      //     'Accept': 'text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01',
-      //     // 'X-Requested-With': 'XMLHttpRequest'
-      //   },
-      //   data: {
-      //     "phone": trimedPhone,
-      //   	"advCode": "alfasite",
-      //   	"platformId": "Dud_abm_landing_siz"
-      //   }
-      //   })
-      //   .then(function(res){
-      //     console.log('responce', res);
-      //     // window.location.href = res.headers["x-final-url"]
-      //
-      //   })
-      //   .catch(function(err){
-      //     console.log(err)
-      //     alert('сервер не ответил, перенаправляю вручную через window.location');
-      //     // window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
-      //   })
-
+      
       $.ajax({
         method: 'GET',
         url: "https://anketa.alfabank.ru/ona/lead?userType=nc",
@@ -408,15 +376,6 @@ $(document).ready(function(){
         console.log("always", res);
         window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
       });
-
-      // $.post('https://anketa.alfabank.ru/ona/lead', {
-      //   "phone": trimedPhone,
-      // 	"advCode": "alfasite",
-      // 	"platformId": "Dud_abm_landing_siz"
-      // }, function(res){
-      //   console.log(res)
-      // }, "application/x-www-form-urlencoded")
-
     }
 
   })
