@@ -366,8 +366,6 @@ $(document).ready(function(){
         // для виртуальной карты platformID - landing_virtual_card
       }
 
-      console.log({leadParams})
-
       $.ajax({
         method: 'GET',
         url: "https://anketa.alfabank.ru/ona/lead?userType=nc",
@@ -454,9 +452,6 @@ $(document).ready(function(){
 
   $('[js-cta-phone]').on('input', function() {
     var inputWidth = Math.ceil($(this).textWidth()) + 1;
-    // var inputWidth = Math.ceil($(this).textWidth()
-    // + parseInt($(this).css('padding-left'))
-    // + parseInt($(this).css('padding-right'))) + 1;
 
     $(this).css({
       width: inputWidth
