@@ -355,7 +355,18 @@ $(document).ready(function(){
 
     if ( formIsValid() ){
 
-      var trimedPhone = $formInput.val().replace(/-|\s/g,"").substring(1);
+      var trimedPhone = "7" + $formInput.val().replace(/-|\s/g,"");
+
+      var leadParams = {
+        "phone": trimedPhone,
+        "advCode": "alfasite",
+        "platformId": getParameterByName("platformId") || "landing_abm_siz"
+        // дефолты для органического трафика
+        // для лендинга АБМ platformID - landing_abm_siz
+        // для виртуальной карты platformID - landing_virtual_card
+      }
+
+      console.log({leadParams})
 
       $.ajax({
         method: 'GET',
@@ -363,14 +374,7 @@ $(document).ready(function(){
         // url: 'https://cors-anywhere.herokuapp.com/https://anketa.alfabank.ru/ona/lead',
         dataType: 'jsonp',
         // contentType: "application/json",
-        data: {
-          "phone": trimedPhone,
-          "advCode": "alfasite",
-          "platformId": getParameterByName("platformId") || "landing_abm_siz"
-          // дефолты для органического трафика
-          // для лендинга АБМ platformID - landing_abm_siz
-          // для виртуальной карты platformID - landing_virtual_card
-        }
+        data: leadParams
       })
       .done(function(res){
         console.log('done', res)
