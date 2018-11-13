@@ -335,7 +335,7 @@ $(document).ready(function(){
   ////////////
   // Masked input
   function initMasks(){
-    $("[js-cta-phone]").mask("+7 000 000-00-00", {
+    $("[js-cta-phone]").mask("000 000-00-00", {
       // placeholder: "+7 (___) ___-____"
     });
   }
@@ -356,7 +356,7 @@ $(document).ready(function(){
     if ( formIsValid() ){
 
       var trimedPhone = $formInput.val().replace(/-|\s/g,"").substring(1);
-      
+
       $.ajax({
         method: 'GET',
         url: "https://anketa.alfabank.ru/ona/lead?userType=nc",
@@ -366,7 +366,10 @@ $(document).ready(function(){
         data: {
           "phone": trimedPhone,
           "advCode": "alfasite",
-          "platformId": "Dud_abm_landing_siz"
+          "platformId": getParameterByName("platformId") || "landing_abm_siz"
+          // дефолты для органического трафика
+          // для лендинга АБМ platformID - landing_abm_siz
+          // для виртуальной карты platformID - landing_virtual_card
         }
       })
       .done(function(res){
@@ -377,27 +380,31 @@ $(document).ready(function(){
         window.location.href = "https://anketa.alfabank.ru/ona/auth/login"
       });
     }
-
   })
-  // $formInput.on('blur', function(e){
-  //   // console.log('blur')
-  // })
-  $formInput.on('focus', function(e){
-    // focus once only - nothing hapens on blur
-    $form.addClass('is-focused');
-    if ( $formInput.val().length < 3 ){
-      $(this).val("+7 ");
+
+  // emulate focus triggers
+  $('.cta-form__input-wrapper').on('click', function(){
+    $formInput.focus();
+  })
+
+  $formInput.on('blur', function(e){ // blur is like focusout
+    // blur - remove focus if blank
+    $form.removeClass('is-bordered');
+
+    if ( $formInput.val().trim().length === 0 ){ // TODO - trim ?
+      $form.removeClass('is-focused')
+    } else {
+      $form.addClass('is-focused');
     }
+  })
+
+  $formInput.on('focus', function(e){ // focus is like focusin
+    // focus - always visible
+    $form.addClass('is-focused');
+    $form.addClass('is-bordered');
   })
 
   $formInput.on('keyup', function(e){
-    // always keep + 7 at the very beggiing
-    if ( $formInput.val().length < 3 ){
-      $(this).val("+7 ");
-      e.preventDefault();
-    }
-
-    // assume that form is valid because mask gives 16 symbols
     controllButton();
     toggleCheckbox();
   })
@@ -407,7 +414,7 @@ $(document).ready(function(){
   })
 
   function phoneIsValid(){
-    return $formInput.val().length === 16
+    return $formInput.val().length === 13
   }
 
   function formIsValid(){
@@ -426,13 +433,38 @@ $(document).ready(function(){
 
   function toggleCheckbox(){
     if ( phoneIsValid() ){
-      // $form.addClass('is-phone-valid')
+      $form.addClass('is-phone-valid')
       $formCheckbox.parent().fadeIn(250)
     } else {
-      // $form.removeClass('is-phone-valid')
+      $form.removeClass('is-phone-valid')
       $formCheckbox.parent().fadeOut(250)
     }
   }
+
+
+  $.fn.textWidth = function(text, font) {
+    if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+    $.fn.textWidth.fakeEl.text(text || this.val() || this.text() || this.attr('placeholder')).css('font', font || this.css('font'));
+    return $.fn.textWidth.fakeEl.width();
+  };
+
+  $('[js-cta-phone]').on('input', function() {
+    var inputWidth = Math.ceil($(this).textWidth()) + 1;
+    // var inputWidth = Math.ceil($(this).textWidth()
+    // + parseInt($(this).css('padding-left'))
+    // + parseInt($(this).css('padding-right'))) + 1;
+
+    $(this).css({
+      width: inputWidth
+    })
+  }).trigger('input');
+
+
+  function inputWidth(elem, minW, maxW) {
+    elem = $(this);
+  }
+
+  inputWidth($('[js-cta-phone]'));
 
 
   ////////////
@@ -487,7 +519,18 @@ $(document).ready(function(){
       }));
 
     });
+  }
 
+
+  // HELPER FUNCTIONS
+  function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
   }
 
 });

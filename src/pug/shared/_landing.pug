@@ -226,12 +226,15 @@
           .cta-form__description Оставьте свой номер телефона и&nbsp;мы&nbsp;откроем Расчетный счет <br /> без визита в&nbsp;банк
 
         form(js-cta-form).cta-form__form
-          input.cta-form__input(
-            autocomplete="off" autocorrect="off" autocapitalize="none"
-            type="tel" 
-            name="phone" 
-            placeholder="Ваш телефон" 
-            js-cta-phone)
+          .cta-form__input-wrapper
+            .cta-form__placeholder Ваш телефон
+            .cta-form__input
+              .cta-form__input-maskholder +7
+              input.cta-form__input-text(
+                autocomplete="off" autocorrect="off" autocapitalize="none"
+                type="tel" 
+                name="phone"
+                js-cta-phone)
           .cta-form__checkbox
             input(type="checkbox" id="agree" name="agree" checked js-cta-checkbox)
             label(for="agree")

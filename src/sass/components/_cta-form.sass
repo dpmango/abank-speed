@@ -1,7 +1,8 @@
 .cta-form
   // background: #D4000F
-  background: #f03226
-  color: white
+  // background: #f03226
+  background: white
+  // color: white
   border-radius: 16px
   padding: 40px 30px 100px
   &__wrapper
@@ -28,34 +29,93 @@
     .button
       margin-top: 20px
       &:not([disabled])
+        // background-color: rgba(240, 50, 38, .85)
         background-color: rgba(5, 206, 130, .7)
         &:hover
+          // background-color: rgba(240, 50, 38, 1)
           background-color: rgba(5, 206, 130, .9)
 
     &.is-valid
 
+    &.is-form-valid
+
+    &.is-bordered
+      .cta-form
+        &__input-wrapper
+          box-shadow: 0 0 2px 1px #4d90fe
+          border-color: #ADADAD
+
     &.is-focused
+      .cta-form
+        &__placeholder
+          opacity: 0
+        &__input
+          opacity: 1
 
+  &__input-wrapper
+    flex: 0 1 auto
+    min-width: 1px
+    position: relative
+    width: 100%
+    height: 47px
+    border: 1px solid rgba(#ADADAD, .5)
+    border-radius: 4px
+    transition: .25s $ease
 
-  &__input
-    -webkit-apperance: none
-    background: transparent
-    box-shadow: none
-    vertical-align: middle
-    border: 1px solid rgba(255, 255, 255, .5)
+  &__placeholder
+    position: absolute 0
+    text-align: center
     font-size: 30px
     font-weight: 300
-    color: white
-    margin: 0
-    border-radius: 4px
     padding: 4px 15px
-    text-align: center
-    transition: .25s $ease
-    &::placeholder
-      color: white
-    &:focus
-      box-shadow: 0 0 2px 1px #4d90fe
-      border-color: #aa2e2e
+    color: #ADADAD
+    line-height: normal
+    pointer-events: none
+    // transition: .25s $ease
+
+  &__input
+    position: absolute 0
+    width: 100%
+    min-width: 1px
+    display: flex
+    align-items: center
+    justify-content: center
+    opacity: 0
+    cursor: text
+    // transition: .25s $ease
+    &-maskholder
+      flex: 0 0 auto
+      font-size: 30px
+      font-weight: 300
+      color: $fontColor
+      padding-right: 8px
+    &-text
+      display: inline-block
+      -webkit-apperance: none
+      background: transparent
+      box-shadow: none
+      // width: 100%
+      flex: 0 1 auto
+      width: auto
+      min-width: 1px
+      vertical-align: middle
+      border: 0
+      // border: 1px solid rgba(#ADADAD, .5)
+      font-size: 30px
+      line-height: normal
+      font-weight: 300
+      color: $fontColor
+      margin: 0
+      // just ot make sure width is big enough
+      overflow: visible
+      padding: 4px 0px
+      text-align: center
+      &::placeholder
+        // color: $fontColor
+        // color: #ADADAD
+      &:focus
+        // box-shadow: 0 0 2px 1px #4d90fe
+        // border-color: #ADADAD
 
   &__checkbox
     display: none
@@ -87,7 +147,7 @@
         content: ' '
         size: 15px
         background-color: transparent
-        border: 1px solid rgba(white, .5)
+        border: 1px solid rgba(#1A1718, .5)
         border-radius: 4px
         cursor: pointer
         vertical-align: middle
@@ -95,13 +155,13 @@
         transition: all $transitionSpeed ease-in-out
       &::after
         position: absolute
-        top: -2px
+        top: -3px
         left: 4px
         transform: scale(0)
         display: inline-block
         content: ' '
         size: 15px
-        background-image: svg-load('../icons/checkmark.svg', fill="#fff")
+        background-image: svg-load('../icons/checkmark.svg', fill="#1A1718")
         background-repeat: no-repeat
         background-position: center
         background-size: contain
@@ -116,10 +176,10 @@
         cursor: pointer
         a
           display: inline
-          border-bottom: 1px solid rgba(white, .5)
+          border-bottom: 1px solid rgba(#1A1718, .5)
           transition: .25s $ease
           &:hover
-            color: rgba(white, .7)
+            color: rgba(#1A1718, .7)
 
 +r($desktop)
   .cta-form
